@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор каркасного дома</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Калькулятор каркасного дома</h1>
+            <p>Расчёт параметров каркасного дома с различными типами крыш</p>
+        </header>
+
+        <main class="main">
+            <section class="input-section">
+                <h2>Параметры дома</h2>
+                <form id="houseForm" class="form">
+                    <div class="form-group house-type-group">
+                        <label>Тип дома</label>
+                        <div class="house-type-options">
+                            <div class="house-type-option selected" data-type="single">
+                                <div class="house-type-card">
+                                    <div class="house-type-icon">
+                                        <img src="icon/one.svg" alt="Односкатная крыша" />
+                                    </div>
+                                    <div class="house-type-title">Односкатная</div>
+                                </div>
+                            </div>
+                            <div class="house-type-option" data-type="double">
+                                <div class="house-type-card">
+                                    <div class="house-type-icon">
+                                        <img src="icon/two.svg" alt="Двухскатная крыша" />
+                                    </div>
+                                    <div class="house-type-title">Двухскатная</div>
+                                </div>
+                            </div>
+                            <div class="house-type-option" data-type="multi">
+                                <div class="house-type-card">
+                                    <div class="house-type-icon">
+                                        <img src="icon/different.svg" alt="Разноуровневая крыша" />
+                                    </div>
+                                    <div class="house-type-title">Разноуровневая</div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="houseType" name="houseType" required>
+                        
+                        <div class="checkbox-group">
+                            <label for="roofOverhang" class="checkbox-label">
+                                <input 
+                                    type="checkbox" 
+                                    id="roofOverhang" 
+                                    name="roofOverhang"
+                                >
+                                <span class="checkmark"></span>
+                                Свесы для крыши (30см)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group size-group">
+                        <label>Ширина жилой части (м)</label>
+                        <div class="size-options" id="widthOptions">
+                            <!-- Опции ширины будут добавлены динамически -->
+                        </div>
+                    </div>
+
+                    <div class="form-group size-group">
+                        <label>Длина жилой части (м)</label>
+                        <div class="size-options" id="lengthOptions">
+                            <!-- Опции длины будут добавлены динамически -->
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="calculate-btn">Рассчитать</button>
+                </form>
+            </section>
+
+            <section class="slopes-section">
+                <h2>Скаты</h2>
+                <div id="slopesResults">
+                    <div class="placeholder">
+                        <p>Выберите параметры дома и нажмите "Рассчитать"</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="areas-section">
+                <h2>Расчёты</h2>
+                <div id="areasResults">
+                    <div class="placeholder">
+                        <p>Выберите параметры дома и нажмите "Рассчитать"</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
